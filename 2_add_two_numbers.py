@@ -29,14 +29,14 @@ class Solution:
 
 
         s = a + b
-        curry = s // 10
+        carry = s // 10
         s = s % 10
 
         root = ListNode(s)
         rest = self.addTwoNumbers(l1.next if l1 else None, l2.next if l2 else None)
 
-        if curry:
-            rest = self.addTwoNumbers(rest, ListNode(curry))
+        if carry:
+            rest = self.addTwoNumbers(rest, ListNode(carry))
 
         root.next = rest
 
